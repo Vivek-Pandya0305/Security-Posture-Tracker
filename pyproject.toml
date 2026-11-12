@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "posture-tracker"
+version = "3.1.0"
+description = "Security posture assessment and remediation tracker (Nmap NSE + Nuclei)"
+requires-python = ">=3.10"
+dependencies = ["PyYAML>=6", "Flask>=3", "reportlab>=4"]
+
+[project.optional-dependencies]
+dev = ["pytest", "pypdf"]
+
+[project.scripts]
+posture = "posture.cli:main"
+
+[tool.setuptools]
+packages = ["posture"]
